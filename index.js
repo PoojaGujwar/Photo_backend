@@ -7,7 +7,7 @@ const dotenv = require('dotenv')
 const cors = require("cors")
 const cloudinary = require("cloudinary")
 const multer = require('multer')
-const PORT = 4000
+const PORT = process.env.PORT || 4000;
 const Album = require("./models/Album.model")
 const ImageV2 = require("./models/Image.model")
 const ShareData = require("./models/Share.model")
@@ -17,6 +17,7 @@ const {verifyAccessToken} = require("./middleware/verifyAccessToken")
 dotenv.config()
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use(cors({
 origin:"https://photo-frontend-amber.vercel.app",
