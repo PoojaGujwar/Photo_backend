@@ -102,9 +102,6 @@ app.get("/user/profile/google", verifyAccessToken, async (req, res) => {
 });
 
 
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`)
-})
 
 app.post("/albums",async (req, res) => {
   console.log("/albums",req.cookies)
