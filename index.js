@@ -284,6 +284,10 @@ app.post("/v1/shareData",async(req,res)=>{
     res.status(500).json({message:"Error sharing album",error})
   }
 })
+app.post("/render-test", (req, res) => {
+  res.send("RENDER POST WORKING");
+});
+
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`)
